@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #0a0e14;
+  color: #eef2f6;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.card {
+  background: linear-gradient(180deg, #131922 0%, #0f1420 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.glow-emerald { box-shadow: 0 0 40px -10px rgba(16,185,129,0.35); }
+.glow-red { box-shadow: 0 0 40px -10px rgba(239,68,68,0.3); }
+.glow-amber { box-shadow: 0 0 40px -10px rgba(245,197,66,0.3); }
+
+.text-gradient {
+  background: linear-gradient(90deg, #10b981, #f5c542);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #10b981, #0ea371);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up { animation: slideUp 0.4s ease-out both; }
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-pop { animation: popIn 0.3s ease-out both; }
+
+@keyframes ringDraw {
+  from { stroke-dashoffset: 314; }
+}

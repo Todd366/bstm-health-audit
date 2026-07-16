@@ -1,0 +1,60 @@
+[
+  { "category": "Digital Presence", "questions": [
+    { "id": "dp1", "question": "Does your business have a website?", "answers": [
+      {"value":"yes","label":"Yes","points":100},{"value":"no","label":"No","points":0}]},
+    { "id": "dp2", "question": "Are you active on social media?", "answers": [
+      {"value":"active","label":"Yes, regularly","points":100},
+      {"value":"rarely","label":"Rarely post","points":40},
+      {"value":"no","label":"Not active","points":0}]}
+  ]},
+  { "category": "Marketing & Customer Growth", "questions": [
+    { "id": "mk1", "question": "Do you run any paid or organic marketing campaigns?", "answers": [
+      {"value":"yes","label":"Yes, consistently","points":100},
+      {"value":"sometimes","label":"Occasionally","points":50},
+      {"value":"no","label":"No","points":0}]},
+    { "id": "mk2", "question": "Do you track where new customers come from?", "answers": [
+      {"value":"yes","label":"Yes","points":100},{"value":"no","label":"No","points":0}]}
+  ]},
+  { "category": "Financial Management", "questions": [
+    { "id": "fm1", "question": "Do you keep formal financial records?", "answers": [
+      {"value":"yes","label":"Yes, consistently","points":100},
+      {"value":"basic","label":"Basic tracking only","points":50},
+      {"value":"no","label":"No","points":0}]},
+    { "id": "fm2", "question": "Do you have a separate business bank account?", "answers": [
+      {"value":"yes","label":"Yes","points":100},{"value":"no","label":"No","points":0}]}
+  ]},
+  { "category": "Operations", "questions": [
+    { "id": "op1", "question": "Do you have documented processes for daily operations?", "answers": [
+      {"value":"yes","label":"Yes","points":100},
+      {"value":"partial","label":"Some areas only","points":50},
+      {"value":"no","label":"No","points":0}]},
+    { "id": "op2", "question": "How reliable is your supply/inventory flow?", "answers": [
+      {"value":"reliable","label":"Very reliable","points":100},
+      {"value":"unstable","label":"Sometimes unstable","points":50},
+      {"value":"poor","label":"Often disrupted","points":0}]}
+  ]},
+  { "category": "Technology Readiness", "questions": [
+    { "id": "tr1", "question": "Do you use digital payment methods?", "answers": [
+      {"value":"yes","label":"Yes","points":100},{"value":"no","label":"Cash only","points":0}]},
+    { "id": "tr2", "question": "Do you use any software to manage the business (stock, bookings, etc)?", "answers": [
+      {"value":"yes","label":"Yes","points":100},
+      {"value":"basic","label":"Just spreadsheets","points":40},
+      {"value":"no","label":"No","points":0}]}
+  ]},
+  { "category": "Customer Experience", "questions": [
+    { "id": "ce1", "question": "Do you collect customer feedback?", "answers": [
+      {"value":"yes","label":"Yes, regularly","points":100},
+      {"value":"rarely","label":"Rarely","points":40},
+      {"value":"no","label":"No","points":0}]},
+    { "id": "ce2", "question": "Do you have a system for repeat customers (loyalty, follow-up)?", "answers": [
+      {"value":"yes","label":"Yes","points":100},{"value":"no","label":"No","points":0}]}
+  ]},
+  { "category": "Growth & Strategy", "questions": [
+    { "id": "gs1", "question": "Do you have a written plan for growing the business?", "answers": [
+      {"value":"yes","label":"Yes","points":100},
+      {"value":"loose","label":"Just ideas","points":40},
+      {"value":"no","label":"No","points":0}]},
+    { "id": "gs2", "question": "Are you actively exploring new revenue streams?", "answers": [
+      {"value":"yes","label":"Yes","points":100},{"value":"no","label":"No","points":0}]}
+  ]}
+]

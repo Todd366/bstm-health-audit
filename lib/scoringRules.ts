@@ -1,0 +1,7 @@
+export const scoringRules = {
+  excellent: [85, 100],
+  healthy: [70, 84],
+  developing: [50, 69],
+  needsAttention: [30, 49],
+  critical: [0, 29],
+};
