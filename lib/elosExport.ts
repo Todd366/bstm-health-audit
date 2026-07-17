@@ -1,21 +1,13 @@
 export async function exportToELOS(report: any) {
   const payload = {
     source: "business-health-audit",
-    business: {
-      industry: report.business?.industry ?? "",
-      location: report.business?.location ?? "",
-    },
-    healthScore: report.healthScore,
-    categoryScores: report.categoryScores ?? {},
-    weaknesses: report.diagnosis?.weaknesses ?? [],
+    business: report.business,
+    scores: report.scores,
+    diagnosis: report.diagnosis,
     timestamp: new Date().toISOString(),
   };
 
-  const endpoint = process.env.ELOS_API_URL;
-  if (!endpoint) {
-    console.warn("ELOS_API_URL not set — skipping export");
-    return { sent: false, reason: "no endpoint configured", payload };
-  }
+  const endpoint = process.env.NEXT_PUBLIC_ELOS_ENDPOINT || "https://bstm-elos.vercel.app/api/receive-audit";
 
   try {
     const res = await fetch(endpoint, {
@@ -23,10 +15,9 @@ export async function exportToELOS(report: any) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-    const data = await res.json().catch(() => null);
-    return { sent: res.ok, status: res.status, data, payload };
-  } catch (err) {
-    console.error("ELOS export failed:", err);
-    return { sent: false, error: String(err), payload };
+    const data = await res.json();
+    return { sent: true, status: res.status, data };
+  } catch (err: any) {
+    return { sent: false, error: err.message };
   }
 }
