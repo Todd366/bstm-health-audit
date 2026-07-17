@@ -1,8 +1,14 @@
 "use client";
 import { useState } from "react";
 
-export default function BusinessProfileForm({ onNext }: { onNext: (profile: any) => void }) {
-  const [form, setForm] = useState({ name: "", industry: "", location: "" });
+export interface BusinessData {
+  name: string;
+  industry: string;
+  location: string;
+}
+
+export default function BusinessProfileForm({ onNext }: { onNext: (profile: BusinessData) => void }) {
+  const [form, setForm] = useState<BusinessData>({ name: "", industry: "", location: "" });
   return (
     <form
       onSubmit={(e) => { e.preventDefault(); onNext(form); }}
