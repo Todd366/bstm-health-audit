@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getProfile } from "@/lib/localStore";
 
 export interface BusinessData {
   name: string;
@@ -9,6 +10,12 @@ export interface BusinessData {
 
 export default function BusinessProfileForm({ onNext }: { onNext: (profile: BusinessData) => void }) {
   const [form, setForm] = useState<BusinessData>({ name: "", industry: "", location: "" });
+  useEffect(() => {
+    const p = getProfile();
+    if (p.name || p.industry || p.location) {
+      setForm((f) => ({ name: f.name || p.name, industry: f.industry || p.industry, location: f.location || p.location }));
+    }
+  }, []);
   return (
     <form
       onSubmit={(e) => { e.preventDefault(); onNext(form); }}

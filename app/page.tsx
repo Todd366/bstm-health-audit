@@ -14,6 +14,11 @@ export default function HomePage() {
       >
         Start Free Audit →
       </a>
+      <div className="flex gap-5 mt-6 text-sm text-gray-400">
+        <a href="/history" className="hover:text-white underline underline-offset-4">My audits</a>
+        <a href="/profile" className="hover:text-white underline underline-offset-4">Profile</a>
+        <a href="/settings" className="hover:text-white underline underline-offset-4">Settings</a>
+      </div>
       <div className="flex gap-6 mt-12 text-xs text-gray-500">
         <span>7 categories</span><span>·</span><span>Instant score</span><span>·</span><span>Real report</span>
       </div>

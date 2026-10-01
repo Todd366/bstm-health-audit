@@ -14,6 +14,7 @@ import DebugPanel from "./DebugPanel";
 import { loadQuestions } from "@/lib/questions";
 import { calculateScores } from "@/lib/scoring";
 import { generateDiagnosis } from "@/lib/diagnosis";
+import { getSettings, addHistory } from "@/lib/localStore";
 
 const categories = loadQuestions();
 
@@ -31,6 +32,15 @@ export default function AuditForm() {
     const scores = calculateScores(answers, categories);
     const diagnosis = generateDiagnosis(scores);
     const finalReport = { business, scores, diagnosis };
+    const settings = getSettings();
+    if (settings.saveHistory) {
+      addHistory({
+        business: (business || {}) as any,
+        overall: scores.overall,
+        categories: scores.categories,
+        diagnosis,
+      });
+    }
     setReport(finalReport);
     setStep(categories.length + 2);
 
@@ -39,7 +49,7 @@ export default function AuditForm() {
       const res = await fetch("/api/submit-audit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ business, answers }),
+        body: JSON.stringify({ business, answers, exportToElos: settings.autoExportElos }),
       });
       setSubmitStatus(res.ok ? "ok" : "fail");
     } catch {
