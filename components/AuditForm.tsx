@@ -98,6 +98,12 @@ export default function AuditForm() {
           <ImprovementSuggestions weaknesses={report.diagnosis.weaknesses} />
           <BSTMRecommendations businessName={business?.name || ""} />
           <BSTMDiscoveryButton />
+          <button
+            onClick={() => window.print()}
+            className="no-print w-full card rounded-xl py-3 mt-3 text-sm text-gray-300 hover:text-white"
+          >
+            Print / save as PDF
+          </button>
         </div>
       )}
 

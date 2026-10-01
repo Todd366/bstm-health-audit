@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function DebugPanel({ state }: { state: Record<string, any> }) {
   const [open, setOpen] = useState(false);
+  if (process.env.NODE_ENV === "production") return null;
   return (
     <>
       <button

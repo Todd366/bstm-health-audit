@@ -43,3 +43,10 @@ body {
 @keyframes ringDraw {
   from { stroke-dashoffset: 314; }
 }
+
+@media print {
+  body { background: #fff !important; color: #111 !important; }
+  .card { background: #fff !important; border: 1px solid #ccc !important; box-shadow: none !important; }
+  .no-print, .btn-primary { display: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
